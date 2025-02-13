@@ -13,7 +13,7 @@ Ao salvar algum arquivo, o servidor será reiniciado e exibirá o conteúdo atua
 
 ## Deploy
 ```
-mkdocs gh-deploy
+cd wiki && mkdocs gh-deploy
 ```
 O deploy pegará o que está na branch atual e mandar para a branch `gh-pages`, incluindo arquivos que ainda não foram versionados. Antes de executar o comando, verifique se a documentação realmente poderá ser publicada.
 
