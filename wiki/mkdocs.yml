@@ -9,6 +9,7 @@ theme:
 nav:
   - 'Página inicial': index.md
   - Formulários: forms.md
+  - Formatadores: formatter.md
 markdown_extensions:
   - attr_list
   - md_in_html
