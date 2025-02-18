@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../forms/">
       
-      
-        <link rel="next" href="../formatter/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Formulários - Django Wiki</title>
+        <title>Formatadores - Django Wiki</title>
       
     
     
@@ -70,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#formularios" class="md-skip">
+        <a href="#formatadores" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Formulários
+              Formatadores
             
           </span>
         </div>
@@ -217,6 +215,27 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../forms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Formulários
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -233,7 +252,7 @@
           
   
   <span class="md-ellipsis">
-    Formulários
+    Formatadores
     
   </span>
   
@@ -245,7 +264,7 @@
         
   
   <span class="md-ellipsis">
-    Formulários
+    Formatadores
     
   </span>
   
@@ -268,9 +287,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inputs-de-data" class="md-nav__link">
+  <a href="#dinheiro-ou-similares" class="md-nav__link">
     <span class="md-ellipsis">
-      Inputs de data
+      Dinheiro (ou similares)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forma-humanizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forma humanizada
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forma-humanizada-de-numeros-grandes-milhao-trilhao-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forma humanizada de números grandes (milhão, trilhão, etc)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forma-humanizada-de-datas-ontem-hoje-e-amanha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forma humanizada de datas (ontem, hoje e amanhã)
     </span>
   </a>
   
@@ -280,27 +326,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../formatter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Formatadores
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -332,9 +357,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inputs-de-data" class="md-nav__link">
+  <a href="#dinheiro-ou-similares" class="md-nav__link">
     <span class="md-ellipsis">
-      Inputs de data
+      Dinheiro (ou similares)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forma-humanizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forma humanizada
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forma-humanizada-de-numeros-grandes-milhao-trilhao-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forma humanizada de números grandes (milhão, trilhão, etc)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forma-humanizada-de-datas-ontem-hoje-e-amanha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forma humanizada de datas (ontem, hoje e amanhã)
     </span>
   </a>
   
@@ -356,69 +408,112 @@
 
 
 
-<h1 id="formularios">Formulários</h1>
-<p>Sem dúvidas, os formulários do Django facilitam a entrega de funcionalidades com pouco esforço.</p>
-<h2 id="inputs-de-data">Inputs de data</h2>
-<p>Existem, basicamente, duas formas de criar inputs de data e a escolha depende, essencialmente, de quem terá o controle das funcionalidades.</p>
-<ol>
-<li>
-<p>A primeira opção é quando o controle de data deve ocorrer pelo navegador:</p>
-<p><div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">date_field</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">DateInput</span><span class="p">(</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">attrs</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;date&quot;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="p">}</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="p">)</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">)</span>
+<h1 id="formatadores">Formatadores</h1>
+<p>Formatadores úteis</p>
+<h2 id="dinheiro-ou-similares">Dinheiro (ou similares)</h2>
+<p>No template, coloque:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>variavel|floatformat:&quot;2g&quot;
 </span></code></pre></div>
-Neste cenário, Django tem pouco controle do que ocorre ali porque <code>DateInput</code> será um <code>&lt;input type="date"&gt;</code> e o navegador aplicará as regras dele.
-No Firefox, por exemplo, isso será renderizado com um botão que permitirá o usuário selecionar uma data sem precisar digitar todos os campos.
-<figure markdown="span">
-    <img alt="Input de data" src="../images/date-selector.png" width="300" />
-    <figcaption>O navegador decide como exibir o input e como a seleção de data ocorrerá (Firefox no desktop)</figcaption>
-</figure>
-O locale do input também ficará a critério do navegador, então se ele foi configurado para português brasileiro, provavelmente o padrão será <code>DD/MM/AAAA</code>, mas, se for inglês americano, o padrão será <code>MM/DD/AAAA</code>.</p>
-<p><strong>Observação</strong>: como o navegador está ciente que o <code>input</code> é uma data, ele garante que o que for digitado será válido no locale do usuário, ou seja, não será permitido digitar, por exemplo, <code>50/02/2000</code>. Além disso, se o usuário estiver usando um navegador no celular, o seletor nativo ajuda a pessoa a selecionar datas com mais facilidade do que digitar no teclado.
-<figure markdown="span">
-    <img alt="Input de data" src="../images/date-selector-mobile.jpeg" width="300" />
-    <figcaption>Como um input de data se comporta (Firefox no Android)</figcaption>
-</figure></p>
-</li>
-<li>
-<p>A segunda opção é colocar o controle do input para o Django:</p>
-<p><div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">date_field</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">input_formats</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">/%m/%Y&quot;</span><span class="p">],</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">DateInput</span><span class="p">(),</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">)</span>
+A formatação vai considerar a localização. Supondo que <code>variavel</code> seja 10.33333333, então, se o locale for português, o resultado ficará como <code>10,33</code>.</p>
+<p>Outros exemplos:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Saída</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>10.366666</code></td>
+<td><code>10,37</code></td>
+</tr>
+<tr>
+<td><code>1234.366666</code></td>
+<td><code>1.124,37</code></td>
+</tr>
+<tr>
+<td><code>10.0</code></td>
+<td><code>10,00</code></td>
+</tr>
+</tbody>
+</table>
+<p>O argumento <code>2</code> indica a quantidade de casas decimais (sempre com duas casas decimais, no caso). O <code>g</code> indica que haverá agrupamento de milhar de acordo com o locale (em inglês americano, por exemplo, o separador é <code>,</code>).</p>
+<p><a href="https://docs.djangoproject.com/en/dev/ref/templates/builtins/#floatformat">A documentação completa pode ser acessada aqui</a>.</p>
+<h2 id="forma-humanizada">Forma humanizada</h2>
+<p>Às vezes pode ser necessário aplicar uma forma humanizada a algum valor. Para tal, o seguinte setup é necessário:</p>
+<p>Primeiro, verifique se, em <code>settings.py</code>, o app <code>humanize</code> está incluso:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>INSTALLED_APPS = [
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    ...,
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    &quot;django.contrib.humanize&quot;,
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>]
 </span></code></pre></div>
-Neste cenário, Django tem maior controle do input. No código acima, <code>input_formats</code> recebe uma lista de possíveis formas de se inserir a data.</p>
-<p>Imagine um cenário em que, por algum motivo, se quer exibir o input sempre no padrão <code>DD/MM/AAAA</code> independente do locale do navegador do usuário, então a segunda opção permitirá adicionar essa funcionalidade. O formato poderia ser de outras formas, por exemplo: <code>%m/%y</code> para aceitar apenas mês e ano (com dois dígitos).</p>
-<p><figure markdown="span">
-    <img alt="Input de data" src="../images/date-selector-text.png" width="300" />
-    <figcaption>O navegador exibirá apenas como um input do tipo <code>text</code></figcaption>
-</figure>
-A desvantagem é que, como o navegador não sabe que aquilo é um <code>date</code>, ele não consegue fornecer uma ferramenta de seleção de data. Além disso, um <code>placeholder</code> e possivelmente máscara seriam úteis também para minimizar essa desvantagem.</p>
-<p>O exemplo abaixo minimiza esses efeitos:
-<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">date_field</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">input_formats</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y&quot;</span><span class="p">],</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">DateInput</span><span class="p">(</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="n">attrs</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            <span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;form-control&quot;</span><span class="p">,</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>            <span class="s2">&quot;x-mask&quot;</span><span class="p">:</span> <span class="s2">&quot;99/99/9999&quot;</span><span class="p">,</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            <span class="s2">&quot;x-data&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>            <span class="s2">&quot;placeholder&quot;</span><span class="p">:</span> <span class="s2">&quot;DD/MM/AAAA&quot;</span><span class="p">,</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span> <span class="c1"># (1)</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="p">}</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="p">)</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">)</span>
-</span></code></pre></div></p>
-<ol>
-<li><code>type text</code> é o valor padrão, então é opcional informar. Se quiser o tipo <code>date</code>, então é obrigatório informar.</li>
-</ol>
-<p><strong>Observação</strong>: o exemplo acima não garante que o usuário digite uma data inválida, por exemplo <code>90/60/0001</code>, apenas aplicará uma máscara que impede caracteres diferentes de números de serem digitados.</p>
-<p>Na validação do Django, isso será barrado, mas o usuário terá a liberdade de digitar o que quiser - isso não ocorre com a primeira opção porque o navegador sabe que não existe um mês <code>60</code>, por exemplo.</p>
-</li>
-</ol>
+No template que ocorrerá a conversão, carregue o <code>humanize</code>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{% load humanize %}
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>(restante do HTML)
+</span></code></pre></div>
+Todas as formas humanizadas abaixo necessitam deste setup.</p>
+<p><a href="https://docs.djangoproject.com/en/5.1/ref/contrib/humanize/#module-django.contrib.humanize">Documentação</a></p>
+<h2 id="forma-humanizada-de-numeros-grandes-milhao-trilhao-etc">Forma humanizada de números grandes (milhão, trilhão, etc)</h2>
+<p><a href="#forma-humanizada">Setup</a></p>
+<p>Na variável a ser transformada, aplique um filtro:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>variavel|intword
+</span></code></pre></div>
+<p>Alguns exemplos considerando o locale como português brasileiro:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Saída</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1_000</code></td>
+<td><code>1000</code></td>
+</tr>
+<tr>
+<td><code>1_000_000</code></td>
+<td><code>1,0 milhão</code></td>
+</tr>
+<tr>
+<td><code>1_200_000</code></td>
+<td><code>1,2 milhões</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="forma-humanizada-de-datas-ontem-hoje-e-amanha">Forma humanizada de datas (ontem, hoje e amanhã)</h2>
+<p><a href="#forma-humanizada">Setup</a></p>
+<p>Na variável a ser transformada, aplique um filtro:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>variavel|naturalday
+</span></code></pre></div>
+<p>Alguns exemplos considerando o locale como português brasileiro e que hoje é 02/01/2000:</p>
+<table>
+<thead>
+<tr>
+<th>Valor</th>
+<th>Saída</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>date(2000, 1, 2)</code></td>
+<td><code>hoje</code></td>
+</tr>
+<tr>
+<td><code>date(2000, 1, 1)</code></td>
+<td><code>ontem</code></td>
+</tr>
+<tr>
+<td><code>date(2000, 1, 3)</code></td>
+<td><code>amanhã</code></td>
+</tr>
+<tr>
+<td><code>date(2000, 1, 4)</code></td>
+<td><code>04 de Janeiro de 2000</code></td>
+</tr>
+</tbody>
+</table>
 
 
 
